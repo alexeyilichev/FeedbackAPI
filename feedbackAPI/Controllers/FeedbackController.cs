@@ -14,6 +14,7 @@ namespace feedbackAPI.Controllers
     public class FeedbackController : Controller
     {
         DBContext _ctx;
+
         public FeedbackController(DBContext ctx)
         {
             _ctx = ctx;
@@ -28,7 +29,7 @@ namespace feedbackAPI.Controllers
 
         [HttpGet]
         [Route("SaveMessage")]
-        public async Task<IActionResult> SaveMessage(string title ,string text)
+        public async Task<IActionResult> SaveMessage(string title, string text)
         {
             try
             {
@@ -43,7 +44,7 @@ namespace feedbackAPI.Controllers
             }
             catch (Exception ex)
             {
-                return Json(new { Success = false, Message = ex.Message }) ;
+                return Json(new { Success = false, Message = ex.Message });
             }
         }
 
@@ -64,4 +65,4 @@ namespace feedbackAPI.Controllers
             };
         }
     }
-    }
+}
